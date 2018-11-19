@@ -15,5 +15,10 @@ stages{
 	junit 'reports/result.xml'
 	}
 	}
+	stage('Deploy'){
+		steps{
+			aws s3 cp 'rectangle-*.jar s3://github.com-vaalch-java-project — grants'
+		}
+	}
  }
 }
