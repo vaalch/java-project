@@ -17,13 +17,9 @@ stages{
 	}
 	stage('Deploy'){
 		steps{
-			sh 'aws s3 cp reports/result/rectangle-*.jar s3://github.com-vaalch-javaproject'
+			sh 'aws s3 cp https://github.com/vaalch/java-project/blob/master/lib/junit-4.10.jar s3://github.com-vaalch-javaproject/rectangle-*.jar'
 		}
 	}
-	post{
-		always {
-			archiveArtifacts artifacts: 'reports/result/rectangle-*.jar, fingerprint: true
-		}
-	}
+	
  }
 }
