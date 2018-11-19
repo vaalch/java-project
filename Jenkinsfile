@@ -17,7 +17,7 @@ stages{
 	}
 	stage('Deploy'){
 		steps{
-			s3Upload(file:'rectangle-*.jar', 'bucket:github.com-vaalch-javaproject', path:'path/rectangle-*.jar')
+			aws s3 cp 'rectangle-*.jar s3://github.com-vaalch-javaproject'
 		}
 	}
  }
