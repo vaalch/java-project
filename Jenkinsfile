@@ -17,7 +17,12 @@ stages{
 	}
 	stage('Deploy'){
 		steps{
-			sh 'aws s3 cp http://18.214.40.70:8080/job/java-pipeline/GitHubPollLog.jar s3://github.com-vaalch-javaproject'
+			sh 'aws s3 cp reports/result/rectangle-*.jar s3://github.com-vaalch-javaproject'
+		}
+	}
+	post{
+		always {
+			archiveArtifacts artifacts: 'reports/result/rectangle-*.jar, fingerprint: true
 		}
 	}
  }
