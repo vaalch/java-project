@@ -9,7 +9,7 @@ stages{
 		}
 	stage('Test'){
 	steps{
-	junit 'reports/*.xml
+	junit 'reports/*.xml'
 	}
 	}
  }
