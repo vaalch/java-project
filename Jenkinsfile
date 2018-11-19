@@ -17,7 +17,7 @@ stages{
 	}
 	stage('Deploy'){
 		steps{
-			sh 'aws s3 cp http://18.214.40.70:8080/job/java-pipeline/GitHubPollLog/ s3://github.com-vaalch-javaproject'  
+			sh 'aws s3 cp /var/jenkins_home/plugins/build-environment/WEB-INF/lib/classes.jar s3://github.com-vaalch-javaproject'  
 		}
 	}
  }
