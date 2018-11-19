@@ -17,7 +17,7 @@ stages{
 	}
 	stage('Deploy'){
 		steps{
-			sh 'aws s3 cp rectangle-*.jar s3://github.com-vaalch-javaproject'
+			sh 'aws s3 cp rectangle-*.jar/master s3://github.com-vaalch-javaproject'
 		}
 	}
  }
