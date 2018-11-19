@@ -17,7 +17,7 @@ stages{
 	}
 	stage('Deploy'){
 		steps{
-			sh 'aws s3 cp https://github.com/vaalch/java-project/blob/master/lib/junit-4.10.jar s3://github.com-vaalch-javaproject'  
+			sh 'aws s3 cp http://18.214.40.70:8080/job/java-pipeline/GitHubPollLog/ s3://github.com-vaalch-javaproject'  
 		}
 	}
  }
