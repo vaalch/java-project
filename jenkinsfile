@@ -1,11 +1,16 @@
-pipeline {
+pipeline{
 	agent any
-	stage(‘Build’) {
-		sh ‘ant’
+	
+stages{
+	stage('Build'){
+		steps{
+			sh 'ant'
+			}
+		}
+	stage('Test'){
+	steps{
+	junit 'reports/*.xml
 	}
-	stage(‘Test’) {
-    sh 'ant'
-    sh 'ant -f test.xml -v'
-		junit ‘reports/results.xml’
 	}
+ }
 }
