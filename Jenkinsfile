@@ -17,6 +17,7 @@ stages{
 	}
 	stage('Deploy'){
 		steps{
+			sh 'ant'
 			sh 'aws s3 cp /var/jenkins_home/workspace/java-pipeline/dist/rectangle-*.jar s3://github.com-vaalch-javaproject/path '  
 		}
 	}
